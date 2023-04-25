@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web title -->
+    <title>JAVASCRIPT DIGITAL CLOCK WITH set alarm FEATURE </title>
+    <!-- link by main css file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="digital-clock">
+        <div class="time">
+            <i><span class="hour"id="hour">00</span></i>
+            <i><span class="dot"id="dot">:</span></i>
+            <i><span class="minute"id="minute">00</span></i>
+            <div class="right-side">
+                <i class="preiod" ><span id="preiod"></span></i>
+                <i class="second"><span id="second">00</span></i>
+            </div>
+        </div>
+        <div class="calender">
+            <span class="day"id="day"><i>Sunday</i></span>,
+            <span class="month"id="month"><i> March</i></span>,
+            <span class="tarik"id="tarik"><i>6</i></span>,
+            <i><span class="year">0000</span></i>
+        </div>
+        <input type="datetime-local" name="alarmType" onchange="setAlarmTime(this.value)">
+        <div class="conteols">
+            <button class="button set-alarm" onclick="setAlarm()">Set alarm</button>
+            <button class="button clear-alarm" onclick="clearAlarm()">Clear alarm</button>
+        </div>
+    </div>
+    <!-- link by main js file -->
+    <script src="script.js"></script>
+    <!-- type js code -->
+    <script>
+        let today = new Date();
+        const daynum = today.getDate();
+        const yearr = today.getFullYear();
+        const dayname = today.toLocaleString("default",{weekday: "long"});
+        const monthname = today.toLocaleString("default",{month: "long"});
+        document.querySelector(".month").innerHTML = monthname;
+        document.querySelector(".day").innerHTML = dayname;
+        document.querySelector(".year").innerHTML = yearr;
+        document.querySelector(".tarik").innerHTML = daynum;
+    </script>
+</body>
+</html>
